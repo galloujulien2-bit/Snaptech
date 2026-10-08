@@ -1,0 +1,18 @@
+# Render — https://render.com
+# Crée un "Web Service" > "Existing repository" > importe ce repo
+# Render lit automatiquement ce fichier
+
+services:
+  - type: web
+    name: snap-tech
+    runtime: node
+    plan: free
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.0.0
+      - key: DISCORD_WEBHOOK_URL
+        sync: false  # à remplir dans le dashboard Render
+    healthCheckPath: /
+    autoDeploy: true

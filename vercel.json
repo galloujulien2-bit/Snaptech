@@ -1,0 +1,13 @@
+# Vercel — https://vercel.com
+# Importe ce repo, Vercel lit ce fichier automatiquement
+
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "regions": ["cdg1"],
+  "env": {
+    "DISCORD_WEBHOOK_URL": "@discord-webhook-url"
+  }
+}

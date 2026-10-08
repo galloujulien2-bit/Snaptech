@@ -1,0 +1,19 @@
+# Netlify — https://netlify.com
+# Importe ce repo, Netlify lit ce fichier automatiquement
+
+[build]
+  command = "npm install --legacy-peer-deps && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Next.js plugin (auto-détecté par Netlify)
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Toutes les routes passent par Next.js
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
